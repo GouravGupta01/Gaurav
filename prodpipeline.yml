@@ -9,7 +9,7 @@ variables:
   - group: remote_state
 
 pool:
-  name: Apagents
+  name: ggagents
 stages:
 - stage: BuildStage
   jobs:
@@ -50,7 +50,7 @@ stages:
     steps:
     - task: ManualValidation@1
       inputs:
-        notifyUsers: 'aparnaajaykumar06@gmail.com'
+        notifyUsers: 'gauravgupta.id1@gmail.com'
         onTimeout: 'resume'
   - job: TerraformApply
     dependsOn:
@@ -69,8 +69,8 @@ stages:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/environments/prod'
         backendServiceArm: 'Appserviceconn'
-        backendAzureRmResourceGroupName: 'Apbackend'
-        backendAzureRmStorageAccountName: 'apstg0001009000'
+        backendAzureRmResourceGroupName: 'ggbackend'
+        backendAzureRmStorageAccountName: 'ggstginfra'
         backendAzureRmContainerName: 'backend'
         backendAzureRmKey: 'prodapstate.tf'
     - task: TerraformTask@5
