@@ -121,10 +121,10 @@ variable "sql_database_name" {
   type        = string
   default     = "devtodoappdb-gourav"
 }
-variable "vm_size" {
-  type        = string
-  description = "Size of the Virtual Machine"
-}
+# variable "vm_size" {
+#   type        = string
+#   description = "Size of the Virtual Machine"
+# }
 variable "admin_username" {
   type        = string
   description = "Admin username for the Virtual Machine"

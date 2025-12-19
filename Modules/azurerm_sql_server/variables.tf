@@ -11,3 +11,8 @@ variable "sql_server_name" {
     type        = string
     sensitive   = true
     }
+    variable "rg_name" {}
+    variable "location" {}
+    variable "tags" {
+      
+    }
