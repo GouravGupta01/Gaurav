@@ -6,20 +6,20 @@
 #}
 
 module "rg" {
-    source = "../../modules/resource_group"
+    source = "../../modules/_azurerm_resource_group"
     rgs = var.rgs   
 
 }
 
 module "acr" {
     depends_on = [ module.rg ]
-    source = "../../modules/container_registry"
+    source = "../../modules/azurerm_container_registry"
     acr = var.acr
 }
 
 module "sql" {
    depends_on = [ module.rg ]
-   source = "../../modules/sql"
+   source = "../../modules/sql_server"
    sql = var.sql
 
 }
@@ -27,28 +27,28 @@ module "sql" {
 
 module "aks_cluster" {
     depends_on = [ module.rg ]
-    source = "../../modules/kubernetes cluster"
+    source = "../../modules/k8s_cluster"
     aks = var.aks
   
 }
 
 module "vnet" {
     depends_on = [ module.rg ]
-    source = "../../modules/networking" 
+    source = "../../modules/azurerm_virtual_network" 
     vnet = var.vnet 
 }
 
 module "keyvault" {
     depends_on = [ module.rg ]
-    source = "../../modules/azure_keyvault"
+    source = "../../modules/azurerm_key_vault"
     keyvault = var.keyvault
   
 }
 
-
-module "storage" {
-    depends_on = [ module.rg ]
-    source = "../../modules/storage"
-    stg = var.stg
-  
+#
+# module "storage" {
+  #  depends_on = [ module.rg ]
+   # source = "../../modules/storage"
+    # stg = var.stg
+  #
 }
