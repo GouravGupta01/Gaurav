@@ -1,17 +1,17 @@
 vm = {
     vm01 ={
-        nic_name = "apnic"
-        rg_name = "Appsrg01"
-        key_vault_name = "Apvault00199900001"
-        vmname = "apvmfe"
+        nic_name = "ggnic"
+        rg_name = "ggrg01"
+        key_vault_name = "ggkeyvault"
+        vmname = "ggvm"
         vm_loc = "West US"
         vmsize = "Standard_B1s"
     }
     vm02 ={
-        nic_name = "apnic2"
-        rg_name = "Appsrg01"
-        key_vault_name = "Apvault00199900001"
-        vmname = "apvmbe"
+        nic_name = "ggnic2"
+        rg_name = "ggrg01"
+        key_vault_name = "ggkeyvault"
+        vmname = "ggvmbe"
         vm_loc = "West US"
         vmsize = "Standard_B1s"
     }
