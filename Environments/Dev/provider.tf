@@ -7,7 +7,7 @@ terraform {
     }
   }
   backend "azurerm" {
-    subscription_id      = "I will fill it later"
+    subscription_id      = "e5c8e042-8d4d-4e69-8511-a29fb378ec23"
     resource_group_name  = "dev-rg-back"
     storage_account_name = "devstgback1"
     container_name       = "tfstate"
@@ -19,6 +19,6 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "I will fill it later"
+  subscription_id = "e5c8e042-8d4d-4e69-8511-a29fb378ec23"
 
 }
