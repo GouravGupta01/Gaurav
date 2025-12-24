@@ -58,7 +58,7 @@ stages:
         provider: 'azurerm'
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/environments/${{ parameters.env }}'
-        backendServiceArm: 'Appserviceconn'
+        backendServiceArm: 'ggtry'
         backendAzureRmResourceGroupName: $(rg_name)
         backendAzureRmStorageAccountName: $(stg_name)
         backendAzureRmContainerName: $(container_name)
@@ -69,7 +69,7 @@ stages:
         provider: 'azurerm'
         command: 'plan'
         workingDirectory: '$(System.DefaultWorkingDirectory)/environments/${{ parameters.env }}'
-        environmentServiceNameAzureRM: 'Appserviceconn'
+        environmentServiceNameAzureRM: 'ggtry'
 - stage: DeployStage
   dependsOn:
   - BuildStage
@@ -100,15 +100,15 @@ stages:
         provider: 'azurerm'
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/environments/${{ parameters.env }}'
-        backendServiceArm: 'Appserviceconn'
+        backendServiceArm: 'ggtry'
         backendAzureRmResourceGroupName: 'ggbackend'
         backendAzureRmStorageAccountName: 'ggstginfra'
         backendAzureRmContainerName: 'backend'
-        backendAzureRmKey: '${{ parameters.env }}apstate.tf'
+        backendAzureRmKey: '${{ parameters.env }}ggstate.tf'
     - task: TerraformTask@5
       displayName: Terraform Apply
       inputs:
         provider: 'azurerm'
         command: 'apply'
         workingDirectory: '$(System.DefaultWorkingDirectory)/environments/${{ parameters.env }}'
-        environmentServiceNameAzureRM: 'Appserviceconn'
+        environmentServiceNameAzureRM: 'ggtry'
